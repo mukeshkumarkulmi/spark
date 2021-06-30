@@ -46,6 +46,11 @@
   <dependencies>
     <!--used during compilation but not exported as transitive dependencies-->
     <dependency>
+     <dependency>
+       <groupId>mysql</groupId>
+       <artifactId>mysql-connector-java</artifactId>
+       <version>5.1.25</version>
+     </dependency>
       <groupId>org.apache.spark</groupId>
       <artifactId>spark-sql_${scala.binary.version}</artifactId>
       <version>${project.version}</version>
@@ -101,11 +106,6 @@
         <exclusion>
           <groupId>com.fasterxml.jackson.core</groupId>
           <artifactId>jackson-annotations</artifactId>
-        </exclusion>
-        <!-- Keep old SDK out of the assembly to avoid conflict with Kinesis module -->
-        <exclusion>
-          <groupId>com.amazonaws</groupId>
-          <artifactId>aws-java-sdk</artifactId>
         </exclusion>
       </exclusions>
     </dependency>
